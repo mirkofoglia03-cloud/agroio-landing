@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroIO – Lista d'Attesa</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #ffffff 0%, #E8F5E9 100%); color: #333; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 20px; }
+        .logo { max-width: 300px; height: auto; display: block; margin: 0 auto 30px; }
+        .hero { text-align: center; margin-bottom: 60px; }
+        .hero h1 { font-size: 3rem; color: #2D5016; margin-bottom: 20px; font-weight: 700; }
+        .hero p { font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto 40px; line-height: 1.8; }
+        .cta { background: #4CAF50; color: white; padding: 16px 48px; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); transition: all 0.3s ease; }
+        .cta:hover { background: #45a049; transform: translateY(-2px); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .feature { background: white; padding: 40px 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .feature:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 48px; margin-bottom: 15px; }
+        .feature h3 { font-size: 1.5rem; color: #2D5016; margin-bottom: 15px; font-weight: 600; }
+        .feature p { color: #666; font-size: 0.95rem; line-height: 1.8; }
+        .form-section { background: white; padding: 50px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 600px; margin: 0 auto 60px; }
+        .form-section h2 { color: #2D5016; text-align: center; margin-bottom: 10px; font-size: 2rem; }
+        .form-section > p { color: #888; text-align: center; margin-bottom: 30px; }
+        .form-group { margin-bottom: 24px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        input, select { width: 100%; padding: 12px; border: 2px solid #E0E0E0; border-radius: 6px; font-size: 1rem; font-family: inherit; background: #FAFAFA; transition: all 0.3s ease; }
+        input:focus, select:focus { outline: none; border-color: #4CAF50; background: white; box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1); }
+        .submit { width: 100%; padding: 14px; background: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 20px; transition: all 0.3s ease; }
+        .submit:hover { background: #45a049; transform: translateY(-2px); }
+        .success { background: #E8F5E9; color: #2D5016; border: 2px solid #4CAF50; padding: 20px; border-radius: 6px; display: none; text-align: center; margin-bottom: 24px; font-weight: 600; }
+        .error { background: #ffebee; color: #c62828; border: 2px solid #f44336; padding: 20px; border-radius: 6px; display: none; text-align: center; margin-bottom: 24px; font-weight: 600; }
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #E0E0E0; margin-top: 60px; }
+        .footer-text { color: #666; margin-bottom: 20px; }
+        .social { margin: 20px 0; }
+        .social a { margin: 0 15px; color: #4CAF50; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+        .social a:hover { color: #2D5016; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .form-section { padding: 30px 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://opovaoiwcgjvqopbegos.supabase.co/storage/v1/object/public/logos/agrio-logo%20(1).png" alt="AgroIO Logo" class="logo">
+
+
+
+        </header>
+
+        <section class="hero">
+            <h1>Il Futuro dell'Agricoltura è Intelligente</h1>
+            <p>AgroIO è l'unica piattaforma all-in-one che unisce meteo in tempo reale, calendario intelligente sincronizzato, database di 240+ prodotti agricoli e checklist automatica. Pianifica meglio. Coltiva di più.</p>
+            <button class="cta" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">Iscriviti alla Lista d'Attesa</button>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Meteo Intelligente</h3>
+                <p>Monitoraggio geolocalizzato in tempo reale. Aggiornamento ogni 10 minuti. Saprai sempre quando irrigare, proteggere, raccogliere.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <h3>Calendario Sincronizzato</h3>
+                <p>Si aggiorna automaticamente in base ai prodotti scelti. Attività generate per stagione e clima. Zero dimenticanze.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+                <h3>240+ Prodotti Completi</h3>
+                <p>Database con caratteristiche agronomiche complete: esposizione, acqua, consociazioni, distanze. Dati reali, non opinioni.</p>
+            </div>
+        </section>
+
+        <section class="form-section" id="form-section">
+            <h2>Unisciti alla Lista d'Attesa</h2>
+            <p>Accesso prioritario + 30 giorni di Pro gratis</p>
+            <div id="success" class="success">✅ Iscrizione riuscita! Controlla la tua email.</div>
+            <div id="error" class="error"></div>
+
+            <form id="form">
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="zona">Zona geografica *</label>
+                    <select id="zona" required>
+                        <option value="">-- Seleziona una zona --</option>
+                        <option value="Nord Italia">Nord Italia</option>
+                        <option value="Centro Italia">Centro Italia</option>
+                        <option value="Sud Italia">Sud Italia</option>
+                        <option value="Estero">Estero</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo di utente *</label>
+                    <select id="tipo" required>
+                        <option value="">-- Seleziona il tuo profilo --</option>
+                        <option value="Principiante">Principiante (orto da zero)</option>
+                        <option value="Hobby">Hobby (orto/balcone per passione)</option>
+                        <option value="Agricoltore">Agricoltore (esperienza formale)</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit">Iscrivimi alla Lista d'Attesa</button>
+            </form>
+        </section>
+
+        <footer>
+            <p class="footer-text">AgroIO lancia il <strong>15 febbraio 2026</strong></p>
+            <div class="social">
+                <a href="https://instagram.com/agroio_official" target="_blank">Instagram</a>
+                <a href="https://t.me/agroio_official" target="_blank">Telegram</a>
+                <a href="https://tiktok.com/@agroio_official" target="_blank">TikTok</a>
+            </div>
+            <p>Domande? Scrivi a <strong>agro.io.info@gmail.com</strong></p>
+        </footer>
+    </div>
+
+    <script>
+    document.getElementById('form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const zona = document.getElementById('zona').value;
+        const tipo = document.getElementById('tipo').value;
+        const successDiv = document.getElementById('success');
+        const errorDiv = document.getElementById('error');
+
+        successDiv.style.display = 'none';
+        errorDiv.style.display = 'none';
+
+        try {
+            const res = await fetch('https://opovaoiwcgjvqopbegos.supabase.co/rest/v1/waitlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wb3Zhb2l3Y2dqdnFvcGJlZ29zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ0NTk4NjksImV4cCI6MjA4MDAzNTg2OX0.f5mIspKGWnyFlm2nnXQX6TCxRx_HliA_03eTZQ-uTJc'
+                },
+                body: JSON.stringify({nome, email, zona_geografica: zona, tipo_utente: tipo})
+            });
+            if (res.ok) {
+                successDiv.style.display = 'block';
+                document.getElementById('form').reset();
+            } else {
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = 'Errore durante l\'iscrizione. Riprova.';
+            }
+        } catch(e) {
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = 'Errore di connessione. Assicurati che la tabella Supabase sia creata.';
+        }
+    });
+    </script>
+</body>
+</html>
