@@ -136,14 +136,13 @@
         errorDiv.style.display = 'none';
 
         try {
-            const res = await fetch('https://opovaoiwcgjvqopbegos.supabase.co/rest/v1/waitlist', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9wb3Zhb2l3Y2dqdnFvcGJlZ29zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ0NTk4NjksImV4cCI6MjA4MDAzNTg2OX0.f5mIspKGWnyFlm2nnXQX6TCxRx_HliA_03eTZQ-uTJc'
-                },
-                body: JSON.stringify({nome, email, zona_geografica: zona, tipo_utente: tipo})
-            });
+            const res = await fetch('/api/subscribe', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({nome, email, zona_geografica: zona, tipo_utente: tipo})
+});
             if (res.ok) {
                 successDiv.style.display = 'block';
                 document.getElementById('form').reset();
