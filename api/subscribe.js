@@ -45,7 +45,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'AgroIO <onboarding@resend.dev>',
+        from: 'AgroIO <noreply@agroio.it>',
         to: email,
         subject: '🌱 Benvenuto nella Lista d\'Attesa di AgroIO!',
         html: `
